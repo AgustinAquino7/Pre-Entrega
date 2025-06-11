@@ -6,14 +6,26 @@
 }
 
 
-body {
+/*body {
     background-color: #FFF8DC;
     font-family: "Playwrite AU SA", cursive;
-} 
+}*/
+
+body {
+  background: linear-gradient(to right, #cceeff, #fff9cc);
+  font-family: "Playwrite AU SA", cursive;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 1rem;
+  overflow-x: hidden;
+}
+
 
 /*!------HEADER------*/
 
-header {
+/*header {
     background-color: #E0F7FA; 
     padding: 20px;
     display: flex;
@@ -24,7 +36,7 @@ header {
     grid-area: header;
 }
 
-header h1 {
+header navbar-brand fs-4 fw-bold{
     font-size: 30px;
     color: #000000;
     text-align: left; 
@@ -33,7 +45,7 @@ header h1 {
 }
 
 
-header nav ul {
+/*header nav ul {
     list-style-type: none; 
 }
 
@@ -41,7 +53,7 @@ header nav ul li {
   display: inline-block; 
 }
 
-header nav ul li a {
+/*header nav ul li a {
     text-decoration: none; 
     color: #333333;
     background-color: #E0F7FA;
@@ -50,10 +62,54 @@ header nav ul li a {
     display: flex;
 }
 
+header div collapse navbar-collapse{
+    text-decoration: none; 
+    color: #333333;
+    background-color: #E0F7FA;
+    padding: 5px 10px;
+    border: 1px solid #00eeff; 
+    display: flex;
+}*/
+
+header {
+  background: linear-gradient(to right, #cceeff, #fff9cc);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+}
+
+.navbar-brand {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #000000 !important;
+  font-size: 1.5rem;
+}
+
+
+.navbar-nav .nav-link {
+  color: #444 !important;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0d6efd !important;
+  transform: scale(1.05);
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
 /*?------MAIN------*/
 
 
-.bienvenidos {
+/*.bienvenidos {
   text-align: center;
   min-height: 60vh;
   background-image: url(../image/Jardín-Loma-Verde-1-1.webp);
@@ -67,6 +123,7 @@ header nav ul li a {
   padding: 2rem;
   grid-area: main;
 }
+
 
 .bienvenidos h2 {
   font-size: clamp(2rem, 5vw, 3rem); 
@@ -88,10 +145,54 @@ header nav ul li a {
   margin-top: 1rem;
   color: #fff;
   text-shadow: 1px 1px 2px #000;
+}*/
+
+.bienvenidos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("../image/Jardín-Loma-Verde-1-1.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  box-sizing: border-box;
+  grid-area: main;
+}
+
+.bienvenidos h2 {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  margin: 0.5rem 0;
+}
+
+.bienvenidos h3 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #fff;
+  margin-top: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.bienvenidos p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: #222;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  max-width: 700px;
+  margin-top: 1.5rem;
+  line-height: 1.6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 
-.zonas-contenedor {
+/*.zonas-contenedor {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -118,10 +219,62 @@ header nav ul li a {
   border-radius: 8px;
   max-height: 300px;
   object-fit: cover;
+}*/
+
+.zonas-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, #cceeff, #fff9cc);
 }
 
 
-.salas-contenedor{
+.zonas {
+  flex: 1 1 320px;
+  max-width: 420px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zonas:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.zonas h2 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+
+.zonas img {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+
+.zonas p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+
+/*.salas-contenedor{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -146,9 +299,60 @@ header nav ul li a {
 .salas img{
   width: 200px;
   height: 200px;
+}*/
+
+.salas-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(to right, #cceeff, #fff9cc);
 }
 
-section h2{
+.salas {
+  flex: 1 1 280px;
+  max-width: 340px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+.salas:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.salas img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.salas h3 {
+  font-size: 1.25rem;
+  color: #020202;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.salas p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+
+/*section h2{
   text-align: center;
 }
 
@@ -162,9 +366,52 @@ h3{
 
 p{
   text-align: center;
+}*/
+
+
+h2 {
+  font-size: 2rem;
+  color: #ff5e9c;
+  font-weight: bold;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.seño-contenedor{
+
+h3 {
+  font-size: 1.5rem;
+  color: #17a2b8;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+
+section h2,
+section h3,
+section p {
+  text-align: center;
+}
+
+
+section {
+  margin-bottom: 3rem;
+}
+
+
+/*.seño-contenedor{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -189,9 +436,59 @@ p{
 .seño img {
   width: 200px;
   height: 200px;
+}*/
+
+.seño-contenedor {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
 }
 
-.boton-inscribete{
+.seño {
+  flex: 1 1 280px;
+  max-width: 320px;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seño:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.seño img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* Texto dentro de .seño */
+.seño h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.seño p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+
+/*.boton-inscribete{
   display: block;
   margin: 20px auto; 
   padding: 10px 20px;
@@ -233,11 +530,162 @@ p{
 
 .mapa{
   text-align: center;
+}*/
+
+.requisitos-contenedor {
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.requisitos-contenedor:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.requisitos {
+  padding: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333333;
+}
+
+/*.formulario-contenedor {
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #cceeff;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario select:focus {
+  border-color: #7a5fff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(122, 95, 255, 0.3);
+}*/
+
+.formulario {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.campo {
+  margin-bottom: 1.5rem;
+}
+
+.campo label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="number"],
+.campo input[type="tel"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.campo input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+button[type="submit"] {
+  background-color: #7a5fff;
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #5a40e5;
+}
+
+
+.boton-inscribete {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #7a5fff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: center;
+  text-align: center;
+}
+
+.boton-inscribete:hover {
+  background-color: #5a40e5;
+  transform: scale(1.05);
+}
+
+
+.boton {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+
+.requisitos,
+.mapa {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #444;
 }
 
 /*------FOOTER------*/
 
-footer {
+/*footer {
   background-color: #E0F7FA; 
   text-align: center;
   padding: 20px;
@@ -272,6 +720,52 @@ footer .redes img {
 
 footer .redes img:hover {
   transform: scale(1.1);
+}*/
+
+footer {
+  background: linear-gradient(to right, #cceeff, #fff9cc);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+  border-top: 3px solid #000000;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #444;
+}
+
+footer p {
+  margin: 0.5rem 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #444;
+  text-align: center;
+}
+
+footer .redes {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer .redes a {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+footer .redes a:hover {
+  transform: scale(1.2);
+  opacity: 0.9;
+}
+
+footer .redes img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #000000;
+  padding: 4px;
+  background-color: white;
 }
 
 
