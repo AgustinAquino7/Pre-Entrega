@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -15,7 +16,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="./index.html">
-                    <img src="./image/Logo.png" alt="logo" width="70">
+                    <img src="./image/Logo.png" alt="logo" width="70" />
                     <span class="fs-4 fw-bold">Jardín de Infantes N°940</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -45,64 +46,79 @@
             </div>
         </nav>
     </header>
+
     <main>
-        <section class="bienvenida-section">
+        <section class="bienvenida-section" data-aos="fade-up">
             <div class="bienvenida-contenido">
-                <h2>✨ Bienvenidxs al Paraíso de los Sueños y la Imaginación ✨</h2>
-                <img src="./image/Jardín-Loma-Verde-1-1.webp" alt="Jardín de Infantes N°940">
-                <p>
-                    En nuestro jardín, cada rincón está lleno de magia, colores y aprendizajes. 🌟<br>
+                <h2 data-aos="fade-down" data-aos-delay="100">✨ Bienvenidxs al Paraíso de los Sueños y la Imaginación ✨
+                </h2>
+                <img src="./image/Jardín-Loma-Verde-1-1.webp" alt="Jardín de Infantes N°940" data-aos="zoom-in"
+                    data-aos-delay="200" />
+                <p data-aos="fade-right" data-aos-delay="300">
+                    En nuestro jardín, cada rincón está lleno de magia, colores y aprendizajes. 🌟<br />
                     Te invitamos a descubrir un mundo donde los sueños florecen y cada peque puede volar con la
                     imaginación.
                 </p>
-                <h3 class="bienvenida-frase">
-                    “La educación no cambia al mundo, cambia a las personas que van a cambiar el mundo.”<br>
+                <h3 class="bienvenida-frase" data-aos="fade-up" data-aos-delay="400">
+                    “La educación no cambia al mundo, cambia a las personas que van a cambiar el mundo.”<br />
                     <span>— Paulo Freire (1970)</span>
                 </h3>
             </div>
         </section>
-        <section class="zonas-section">
+        <section class="zonas-section" data-aos="fade-up">
             <div class="zonas-grid">
-                <article class="zona-card">
+                <article class="zona-card" data-aos="flip-left">
                     <h3>🏰 Nuestra Zona de Juegos 🏰</h3>
                     <img src="./image/GA2TGMBZGY4GGMDDMUYDAOBVMM.webp" alt="Zona de juegos del jardín" />
                     <p>
                         Espacios llenos de aventuras donde jugar es la mejor forma de aprender. Saltamos, reímos y
-                        compartimos momentos inolvidables.
+                        compartimos
+                        momentos inolvidables.
                     </p>
                 </article>
-                <article class="zona-card">
+
+                <article class="zona-card" data-aos="flip-right">
                     <h3>🎈 Rincones Llenos de Magia 🎈</h3>
                     <img src="./image/Cardozo visitó el Jardín de Infantes Nº 905 de Lucila del Mar 2.jpg"
                         alt="Rincón mágico decorado" />
                     <p>
                         Rincones temáticos donde la fantasía se encuentra con la creatividad. Ideal para explorar con
-                        los sentidos y construir historias.
+                        los sentidos
+                        y construir historias.
                     </p>
                 </article>
-                <article class="zona-card">
+
+                <article class="zona-card" data-aos="flip-up">
                     <h3>🌻 Pequeños Grandes Exploradores 🌻</h3>
                     <img src="./image/jardin-4-anos-2018-0x525-1.jpg" alt="Niños y niñas explorando" />
                     <p>
                         Actividades al aire libre, descubrimientos en la naturaleza y propuestas para que cada peque
-                        explore el mundo a su ritmo.
+                        explore el
+                        mundo a su ritmo.
                     </p>
                 </article>
             </div>
         </section>
     </main>
-    <footer>
+    <footer data-aos="fade-in">
         <p>🌈 ¡Gracias por soñar con nosotros! 🌈</p>
         <div class="redes">
             <a href="https://www.facebook.com/varelamunicipio/?locale=es_LA" target="_blank"><img
-                    src="./image/facebook.png" alt=""></a>
-            <a href="https://www.varela.gob.ar/" target="_blank"><img src="./image/google.png" alt=""></a>
+                    src="./image/facebook.png" alt="Facebook" /></a>
+            <a href="https://www.varela.gob.ar/" target="_blank"><img src="./image/google.png" alt="Google" /></a>
         </div>
         <p>© 2025 Jardín de Infantes N°940</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 
 </html>
