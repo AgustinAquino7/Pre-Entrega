@@ -46,76 +46,70 @@
         </nav>
     </header>
     <main>
-        <h2>🚀 Súmate a la Aventura</h2>
-        <p>Estamos muy felices de que quieras formar parte de nuestra tribu verde. 🌱 ¡Aquí los sueños florecen y la
-            imaginación no tiene límites!</p>
-        <section class="requisitos-contenedor">
-            <div class="requisitos">
+        <section class="inscripcion-section">
+            <div class="inscripcion-header">
+                <h2>🚀 Súmate a la Aventura</h2>
+                <p>Estamos muy felices de que quieras formar parte de nuestra tribu verde. 🌱 ¡Aquí los sueños florecen
+                    y la imaginación no tiene límites!</p>
+            </div>
+            <div class="requisitos-box">
                 <h3>📋 ¿Qué necesito para inscribir a mi peque?</h3>
-                <p>Fotocopia del DNI del niño/a y del tutor/ar</p>
-                <p>Libreta de vacunas actualizada</p>
-                <p>Partida de Nacimiento</p>
-                <p>Fotocopia del DNI de las personas autorizadas a retirarlo/la</p>
-                <p>Completar el formulario de inscripción</p>
+                <ul class="requisitos-lista">
+                    <li>📄 Fotocopia del DNI del niño/a y del tutor/a</li>
+                    <li>💉 Libreta de vacunas actualizada</li>
+                    <li>🍼 Partida de nacimiento</li>
+                    <li>👪 Fotocopia del DNI de las personas autorizadas a retirarlo/la</li>
+                    <li>📝 Completar el formulario de inscripción</li>
+                </ul>
             </div>
         </section>
         <section class="formulario-contenedor">
-            <h2>Complete los Datos</h2>
+            <h2>📋 Complete los Datos</h2>
             <form class="formulario" method="post">
                 <div class="campo">
                     <label for="nombre">Nombre del niño/a:</label>
                     <input type="text" id="nombre" name="nombre" required>
                 </div>
-
                 <div class="campo">
                     <label for="edad">Edad:</label>
                     <input type="number" id="edad" name="edad" min="1" required>
                 </div>
-
                 <div class="campo">
                     <label for="email">Email de contacto:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-
                 <div class="campo">
                     <label for="telefono">Teléfono de contacto:</label>
                     <input type="tel" id="telefono" name="telefono" pattern="[0-9]+" required>
                 </div>
-
                 <div class="campo">
                     <label for="padre">Nombre del padre:</label>
                     <input type="text" id="padre" name="padre" required>
                 </div>
-
                 <div class="campo">
                     <label for="madre">Nombre de la madre:</label>
                     <input type="text" id="madre" name="madre" required>
                 </div>
-
                 <div class="campo">
                     <label for="tutor">Tutor/a:</label>
                     <input type="text" id="tutor" name="tutor" required>
                 </div>
-
                 <div class="campo">
                     <label for="domicilio">Domicilio:</label>
                     <input type="text" id="domicilio" name="domicilio" required>
                 </div>
-
                 <div class="campo">
-                    <label>¿Tiene trayectoria escolar?</label><br>
-                    <label><input type="radio" name="trayectoria" value="si" required> Sí</label>
-                    <label><input type="radio" name="trayectoria" value="no"> No</label>
+                    <label>¿Tiene trayectoria escolar?</label>
+                    <div class="opciones">
+                        <label><input type="radio" name="trayectoria" value="si" required> Sí</label>
+                        <label><input type="radio" name="trayectoria" value="no"> No</label>
+                    </div>
                 </div>
-
-                <div class="campo">
-                    <button type="submit">Enviar inscripción 🚀</button>
+                <div class="boton">
+                    <button type="submit" class="boton-inscribete">🚀 Enviar inscripción</button>
                 </div>
             </form>
-
         </section>
-
-
     </main>
     <footer>
         <p>🌈 ¡Gracias por soñar con nosotros! 🌈</p>
@@ -124,7 +118,6 @@
                     src="../image/facebook.png" alt=""></a>
             <a href="https://www.varela.gob.ar/" target="_blank"><img src="../image/google.png" alt=""></a>
         </div>
-
         <p>© 2025 Jardín de Infantes N°940</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
