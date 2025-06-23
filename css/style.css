@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Playwrite+RO:wght@100..400&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
 
 body {
-  background: linear-gradient(to right, #cceeff, #fff9cc);
+  background-image: url("../image/nuevo fondo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+
   font-family: "Playwrite AU SA", cursive;
   color: #333;
   margin: 0;
@@ -15,7 +20,11 @@ body {
   line-height: 1.6;
   font-size: 1rem;
   overflow-x: hidden;
+
+  min-height: 100vh;
 }
+
+
 
 
 /*!------HEADER------*/
@@ -31,11 +40,43 @@ header {
 }
 
 .navbar-brand {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  color: #000000 !important;
-  font-size: 1.5rem;
+  font-family: "Playwrite AU SA", cursive;
+  color: #ff69b4 !important;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
 }
 
+.navbar-brand:hover {
+  transform: scale(1.05);
+  color: #ff85c1 !important;
+}
+
+.navbar-brand img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  animation: bounceLogo 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+@keyframes bounceLogo {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(0) rotate(3deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(-2deg);
+  }
+}
 
 .navbar-nav .nav-link {
   color: #444 !important;
@@ -62,7 +103,6 @@ header {
 
 .bienvenida-section {
   padding: 4rem 2rem;
-  background: linear-gradient(to right, #cceeff, #fff9cc);
   text-align: center;
   border-radius: 20px;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3);
@@ -108,7 +148,7 @@ header {
 
 .bienvenida-frase {
   font-size: 1.4rem;
-  color: #38b000;
+  color: #7a5fff;
   font-style: italic;
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
@@ -126,6 +166,7 @@ header {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -135,7 +176,6 @@ header {
 
 .zonas-section {
   padding: 3rem 2rem;
-  background: linear-gradient(to right, #cceeff, #fff9cc);
 }
 
 .zonas-grid {
@@ -186,7 +226,6 @@ header {
 
 .salas-section {
   padding: 3rem 2rem;
-  background: linear-gradient(to right, #cceeff, #fff9cc);
   border-radius: 20px;
 }
 
@@ -199,50 +238,72 @@ header {
 }
 
 .salas-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 }
 
 .sala-card {
-  flex: 1 1 300px;
-  max-width: 380px;
-  background-color: #ffffff;
   border-radius: 16px;
+  background: rgba(255 255 255 / 0.95);
+  box-shadow: 0 4px 12px rgba(0 0 0 / 0.1);
+  transition:
+    transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+    filter 0.35s ease;
+  will-change: transform, box-shadow;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1.5rem;
-  text-align: center;
-  border: none;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.sala-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
-
-.sala-card h3 {
-  font-size: 1.3rem;
-  color: #7a5fff;
-  margin-bottom: 1rem;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  min-height: 420px;
+  position: relative;
+  z-index: 0;
 }
 
 .sala-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
   border-radius: 12px;
+  max-width: 100%;
+  height: auto;
   margin-bottom: 1rem;
+  transition: transform 0.35s ease;
+  pointer-events: none;
 }
 
-.sala-card p {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 1rem;
+
+.sala-card:hover,
+.sala-card:focus-within {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0 0 0 / 0.25);
+  filter: brightness(1.05);
+  z-index: 10;
 }
 
+.sala-card:hover img,
+.sala-card:focus-within img {
+  transform: scale(1.08);
+}
+
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.zona-card[data-aos] {
+  opacity: 0;
+  animation: fadeSlideUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
 
 h2 {
   font-size: 2rem;
@@ -286,91 +347,142 @@ section {
 }
 
 
-
 .equipo-section {
-  padding: 3rem 2rem;
-  background: linear-gradient(to right, #cceeff, #fff9cc);
-  border-radius: 20px;
+  padding: 4rem 2rem;
+  border-radius: 24px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .equipo-intro h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #38b000;
   font-family: 'Comic Sans MS', cursive, sans-serif;
   margin-bottom: 1rem;
 }
 
+
 .equipo-img {
-  max-width: 600px;
+  max-width: 640px;
   width: 100%;
-  border-radius: 12px;
-  margin: 1.5rem 0;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  margin: 2rem auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
 }
 
+.equipo-img:hover {
+  transform: scale(1.03);
+}
+
+
 .equipo-intro p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #444;
-  line-height: 1.6;
+  line-height: 1.7;
   max-width: 800px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 2rem;
+  font-family: 'Comic Neue', cursive;
 }
 
 .equipo-intro h3 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #7a5fff;
   margin-top: 2rem;
 }
 
 
 .equipo-docente h2 {
-  margin-top: 3rem;
-  font-size: 1.8rem;
+  margin-top: 4rem;
+  font-size: 2rem;
   color: #ff69b4;
+  font-family: 'Comic Sans MS', cursive;
 }
+
 
 .docente-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
 }
+
 
 .docente-card {
-  background-color: #fff;
-  border-radius: 16px;
+  background-color: #ffffff;
+  border-radius: 20px;
   padding: 2rem;
-  max-width: 360px;
+  max-width: 340px;
+  width: 100%;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.docente-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+}
+
 
 .docente-card img {
-  width: 100%;
-  max-height: 250px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 12px;
+  object-position: center;
+  border-radius: 50%;
   margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 4px solid #ffe4ec;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
+.docente-card img:hover {
+  transform: scale(1.05);
+}
+
+
 .docente-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #7a5fff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
+
 
 .docente-card p {
   font-size: 1rem;
   color: #555;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-family: 'Comic Neue', cursive;
 }
 
 
 .equipo-boton {
   margin-top: 3rem;
+}
+
+.equipo-boton a {
+  display: inline-block;
+  background-color: #7a5fff;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: 'Comic Sans MS', cursive;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.equipo-boton a:hover {
+  background-color: #5e3ee5;
+  transform: scale(1.05);
 }
 
 .boton-inscribete {
@@ -394,7 +506,6 @@ section {
 
 
 .inscripcion-section {
-  background: linear-gradient(to right, #cceeff, #fff9cc);
   padding: 3rem 2rem;
   border-radius: 20px;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
@@ -448,7 +559,6 @@ section {
 
 .contact-section {
   padding: 3rem 2rem;
-  background: linear-gradient(to right, #cceeff, #fff9cc);
   border-radius: 20px;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
 }
@@ -531,26 +641,30 @@ section {
 }
 
 .formulario-contenedor {
-  background-color: white;
-  padding: 3rem 2rem;
-  max-width: 800px;
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  max-width: 500px;
+  width: 90%;
   margin: 2rem auto;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   text-align: center;
+  box-sizing: border-box;
 }
+
 
 .formulario-contenedor h2 {
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: #7a5fff;
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
+
 .formulario {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.5rem;
   text-align: left;
 }
 
@@ -559,30 +673,37 @@ section {
   flex-direction: column;
 }
 
+
 .campo label {
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #444;
+  color: #333;
+  font-size: 1rem;
 }
 
 .campo input[type="text"],
 .campo input[type="email"],
 .campo input[type="number"],
 .campo input[type="tel"] {
-  padding: 10px;
+  padding: 0.75rem 1rem;
   border: 2px solid #cceeff;
   border-radius: 10px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
+
 
 .campo input:focus {
   border-color: #7a5fff;
+  box-shadow: 0 0 5px rgba(122, 95, 255, 0.3);
   outline: none;
 }
 
+
 .opciones {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 0.5rem;
 }
@@ -613,6 +734,39 @@ section {
 .boton-inscribete:hover {
   background-color: #5e3ee5;
   transform: scale(1.05);
+}
+
+.campo{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-bottom: 1.5rem;
+}
+
+.campo label {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.campo textarea {
+  width: 80%;
+  max-width: 400px;
+  height: 100px;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.campo textarea:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
 }
 
 
@@ -663,4 +817,3 @@ footer .redes img {
   padding: 4px;
   background-color: white;
 }
-
