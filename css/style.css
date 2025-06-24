@@ -509,12 +509,16 @@ section {
 
 
 
-
 .inscripcion-section {
-  padding: 3rem 2rem;
-  border-radius: 20px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .inscripcion-header h2 {
@@ -531,36 +535,6 @@ section {
   margin: 0 auto 2rem;
   line-height: 1.6;
 }
-
-.requisitos-box {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 2rem;
-  max-width: 600px;
-  margin: 0 auto;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  border: 2px solid #ffe6f0;
-}
-
-.requisitos-box h3 {
-  font-size: 1.5rem;
-  color: #7a5fff;
-  margin-bottom: 1rem;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-}
-
-.requisitos-lista {
-  list-style: none;
-  padding-left: 0;
-  font-size: 1rem;
-  color: #555;
-}
-
-.requisitos-lista li {
-  margin-bottom: 0.8rem;
-  line-height: 1.5;
-}
-
 
 .contact-section {
   padding: 3rem 2rem;
@@ -645,102 +619,40 @@ section {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.inscripcion-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+.requisitos-box {
+  flex: 1 1 400px;
+  max-width: 500px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ffe6f0;
+}
+
+
 .formulario-contenedor {
+  flex: 1 1 400px;
+  max-width: 550px;
   background-color: #ffffff;
   padding: 2.5rem 2rem;
-  max-width: 500px;
-  width: 90%;
-  margin: 2rem auto;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   text-align: center;
   box-sizing: border-box;
 }
-
-
-.formulario-contenedor h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #7a5fff;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-}
-
-
-.formulario {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  text-align: left;
-}
-
-.campo {
-  display: flex;
-  flex-direction: column;
-}
-
-
-.campo label {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #333;
-  font-size: 1rem;
-}
-
-.campo input[type="text"],
-.campo input[type="email"],
-.campo input[type="number"],
-.campo input[type="tel"] {
-  padding: 0.75rem 1rem;
-  border: 2px solid #cceeff;
-  border-radius: 10px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;
-}
-
-
-.campo input:focus {
-  border-color: #7a5fff;
-  box-shadow: 0 0 5px rgba(122, 95, 255, 0.3);
-  outline: none;
-}
-
-
-.opciones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
-.opciones label {
-  font-weight: normal;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-
-.boton {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.boton-inscribete {
-  padding: 12px 24px;
-  background-color: #7a5fff;
-  color: white;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.boton-inscribete:hover {
-  background-color: #5e3ee5;
-  transform: scale(1.05);
-}
-
 .campo {
   display: flex;
   flex-direction: column;

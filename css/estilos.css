@@ -15,7 +15,11 @@
 }
 
 body {
-  background: linear-gradient(to right, #cceeff, #fff9cc);
+  background-image: url("../image/nuevo fondo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
   font-family: "Playwrite AU SA", cursive;
   color: #333;
   margin: 0;
@@ -23,6 +27,7 @@ body {
   line-height: 1.6;
   font-size: 1rem;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 h2 {
@@ -60,6 +65,66 @@ section p {
 
 section {
   margin-bottom: 3rem;
+}
+
+header {
+  background: linear-gradient(to right, #cceeff, #fff9cc);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+header .navbar-brand {
+  font-family: "Playwrite AU SA", cursive;
+  color: #ff69b4 !important;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+}
+header .navbar-brand:hover {
+  transform: scale(1.05);
+  color: #ff85c1 !important;
+}
+header .navbar-brand img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  animation: bounceLogo 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+@keyframes bounceLogo {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(0) rotate(3deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(-2deg);
+  }
+}
+header .navbar-nav .nav-link {
+  color: #444 !important;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s, transform 0.2s;
+}
+header .navbar-nav .nav-link:hover {
+  color: #0d6efd !important;
+  transform: scale(1.05);
+}
+header .navbar-toggler {
+  border: none;
+}
+header .navbar-toggler:focus {
+  box-shadow: none;
 }
 
 .bienvenida-section {
@@ -113,6 +178,383 @@ section {
   font-size: 1rem;
   color: #555;
   margin-top: 0.5rem;
+}
+
+.zonas-section {
+  padding: 3rem 2rem;
+}
+.zonas-section .zonas-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.zonas-section .zona-card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.zonas-section .zona-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+.zonas-section .zona-card h3 {
+  font-size: 1.3rem;
+  color: #ff69b4;
+  margin-bottom: 1rem;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.zonas-section .zona-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+.zonas-section .zona-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+.zonas-section .zona-card[data-aos] {
+  opacity: 0;
+  animation: fadeSlideUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.salas-section {
+  padding: 3rem 2rem;
+  border-radius: 20px;
+}
+.salas-section .salas-header h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ff69b4;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin-bottom: 2rem;
+}
+.salas-section .salas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.salas-section .sala-card {
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.35s cubic-bezier(0.23, 1, 0.32, 1), filter 0.35s ease;
+  will-change: transform, box-shadow;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  min-height: 420px;
+  position: relative;
+  z-index: 0;
+}
+.salas-section .sala-card img {
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  transition: transform 0.35s ease;
+  pointer-events: none;
+}
+.salas-section .sala-card:hover,
+.salas-section .sala-card:focus-within {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.05);
+  z-index: 10;
+}
+.salas-section .sala-card:hover img,
+.salas-section .sala-card:focus-within img {
+  transform: scale(1.08);
+}
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.equipo-section {
+  padding: 4rem 2rem;
+  border-radius: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.equipo-section .equipo-intro h2 {
+  font-size: 2.5rem;
+  color: #38b000;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin-bottom: 1rem;
+}
+.equipo-section .equipo-img {
+  max-width: 640px;
+  width: 100%;
+  border-radius: 16px;
+  margin: 2rem auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+.equipo-section .equipo-img:hover {
+  transform: scale(1.03);
+}
+.equipo-section .equipo-docente h2 {
+  margin-top: 4rem;
+  font-size: 2rem;
+  color: #ff69b4;
+  font-family: "Comic Sans MS", cursive;
+}
+.equipo-section .docente-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+.equipo-section .docente-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 340px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.equipo-section .docente-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+}
+.equipo-section .docente-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 4px solid #ffe4ec;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.equipo-section .docente-card img:hover {
+  transform: scale(1.05);
+}
+.equipo-section .docente-card h3 {
+  font-size: 1.4rem;
+  color: #7a5fff;
+  margin-bottom: 0.6rem;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.equipo-section .docente-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  font-family: "Comic Neue", cursive;
+}
+.equipo-section .equipo-boton {
+  margin-top: 3rem;
+}
+.equipo-section .equipo-boton a {
+  display: inline-block;
+  background-color: #7a5fff;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: "Comic Sans MS", cursive;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.equipo-section .equipo-boton a:hover {
+  background-color: #5e3ee5;
+  transform: scale(1.05);
+}
+.equipo-section .boton-inscribete {
+  padding: 12px 24px;
+  background-color: #7a5fff;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.equipo-section .boton-inscribete:hover {
+  background-color: #5e3ee5;
+  transform: scale(1.05);
+}
+
+.inscripcion-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.inscripcion-section .inscripcion-header h2 {
+  font-size: 2rem;
+  color: #ff69b4;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin-bottom: 1rem;
+}
+.inscripcion-section .inscripcion-header p {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.contact-section {
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.contact-section .contact-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.contact-section .contact-intro h2 {
+  font-size: 2rem;
+  color: #ff69b4;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin-bottom: 1rem;
+}
+.contact-section .contact-intro p {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.contact-section .card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.contact-section .info-card {
+  flex: 1 1 280px;
+  max-width: 360px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #ffe6f0;
+}
+.contact-section .info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+.contact-section .info-card h3 {
+  font-size: 1.4rem;
+  color: #ff69b4;
+  margin-bottom: 0.8rem;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.contact-section .info-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+.contact-section .contact-map {
+  margin-top: 2.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-section .contact-map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.inscripcion-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.inscripcion-wrapper .requisitos-box {
+  flex: 1 1 400px;
+  max-width: 500px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ffe6f0;
+}
+
+.formulario-contenedor {
+  flex: 1 1 400px;
+  max-width: 550px;
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  box-sizing: border-box;
+}
+.formulario-contenedor .campo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.formulario-contenedor .campo label {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.formulario-contenedor .campo textarea {
+  width: 80%;
+  max-width: 400px;
+  height: 100px;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.formulario-contenedor .campo textarea:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
 }
 
 footer {

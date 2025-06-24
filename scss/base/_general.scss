@@ -7,7 +7,12 @@
 
 
 body {
-    background: linear-gradient(to right, #cceeff, #fff9cc);
+    background-image: url("../image/nuevo fondo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+
     font-family: "Playwrite AU SA", cursive;
     color: #333;
     margin: 0;
@@ -15,6 +20,8 @@ body {
     line-height: 1.6;
     font-size: 1rem;
     overflow-x: hidden;
+
+    min-height: 100vh;
 }
 
 h2 {
